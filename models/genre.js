@@ -5,7 +5,7 @@ const genreSchema = new mongoose.Schema({
     name:{
         type:String,
         // required:true,
-        min:3,
+        min:5,
         max:50,
         trim:true
     }
@@ -15,7 +15,7 @@ const Genre = mongoose.model('Genre', genreSchema);
 
 function validateGenre(genre){
     const schema = Joi.object({
-        name:Joi.string().min(3).max(50)
+        name:Joi.string().min(5).max(50)
     });
     return schema.validate(genre);
 }
